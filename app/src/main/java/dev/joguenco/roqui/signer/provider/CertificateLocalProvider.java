@@ -1,11 +1,13 @@
 package dev.joguenco.roqui.signer.provider;
 
 import dev.joguenco.roqui.signer.exception.InvalidCertificateException;
+import lombok.extern.slf4j.Slf4j;
 import xades4j.providers.impl.KeyStoreKeyingDataProvider;
 
 import java.security.cert.X509Certificate;
 import java.util.List;
 
+@Slf4j
 public class CertificateLocalProvider implements KeyStoreKeyingDataProvider.SigningCertSelector {
 
     /**
@@ -17,7 +19,7 @@ public class CertificateLocalProvider implements KeyStoreKeyingDataProvider.Sign
             for (X509Certificate x509Certificate : availableCertificates) {
                 var keyUsage = x509Certificate.getKeyUsage();
                 if (keyUsage == null) {
-                    System.out.println("No es un certificado emitido por una entidad certificadora oficial");
+                    log.warn("No es un certificado emitido por una entidad certificadora oficial");
                     return x509Certificate;
                 }
                 if (x509Certificate.getKeyUsage()[0])

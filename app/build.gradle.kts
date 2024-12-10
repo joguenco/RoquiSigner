@@ -26,6 +26,8 @@ dependencies {
     implementation("org.slf4j:slf4j-jdk14:2.0.16")
     implementation("com.googlecode.xades4j:xades4j:1.7.0")
 
+    compileOnly("org.projectlombok:lombok:1.18.34")
+    annotationProcessor("org.projectlombok:lombok:1.18.34")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
