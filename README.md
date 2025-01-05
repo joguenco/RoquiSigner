@@ -10,12 +10,17 @@ credit notes, remission guides and purchase liquidation for Ecuador country
 
 ## Software
 * Java 21
-* Gradle 8.11
+* Gradle 8.11.1
 
 ## Warning
 Before of continuing, please read the documentation, read the all documents in doc folder
 
 ## Gradle
+### Upgrade Gradle
+```
+gradle wrapper --gradle-version 8.11.1
+```
+
 ### Displays the tasks runnable from root project
 ```
 gradle tasks
